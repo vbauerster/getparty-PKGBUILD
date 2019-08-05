@@ -18,8 +18,9 @@ source=("${pkgname}-${pkgver}.tar.gz::https://github.com/vbauerster/getparty/arc
 sha1sums=('1cba740cfd736a738d704c30f0eee72c9b54ad84')
 
 build() {
+    local commit=$(git ls-remote --tags https://github.com/vbauerster/getparty | grep -F $pkgver | cut -f1)
     cd "$srcdir/$pkgname-$pkgver/cmd/getparty"
-    go build -ldflags="-X main.version=$pkgver"
+    go build -ldflags="-X main.version=$pkgver -X main.commit=$commit"
 }
 
 package() {
