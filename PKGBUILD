@@ -1,4 +1,4 @@
-# Maintainer: Vladimir Bauer <vbauerster@gmail.com>
+# Maintainer: Vladimir Bauer <vbauerster at gmail dot com>
 pkgname=getparty
 pkgver=1.7.2
 pkgrel=1
