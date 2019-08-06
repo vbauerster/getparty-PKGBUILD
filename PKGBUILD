@@ -19,7 +19,7 @@ build() {
     go build \
         -gcflags "all=-trimpath=$PWD" \
         -asmflags "all=-trimpath=$PWD" \
-        -ldflags="-X main.version=$pkgver -X main.commit=$commit" \
+        -ldflags="-X main.version=$pkgver -X main.commit=${commit:0:7}" \
         .
 }
 
